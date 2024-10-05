@@ -49,3 +49,37 @@ h1, h4 {
     margin: 0;
     box-sizing: border-box;
 }
+
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.checkbox-group div {
+    flex: 1 1 45%;
+}
+
+.button-green {
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    width: auto;
+}
+
+.button-red {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    width: auto;
+}
+
+.form-group + .form-group {
+    margin-top: 24px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 24px;
+    color: white;
+}
