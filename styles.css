@@ -1,150 +1,46 @@
-<body body="" class="style-0">
-    <p class="style-1"><img src="images/GoTo_SLogo.png" alt="gotologo" width="92" height="41" class="style-2" /></p> <br class="style-3" />
-    <p class="style-4"><img src="images/GoToLogo.png" alt="Logo" width="400" height="190" class="style-5" /></p>
-    <!-- 
+.style-0 {
+    background: rgba(0, 0, 0, 0.77);
+    cursor: auto;
+    margin: 0px;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: rgb(33, 37, 41);
+    background-color: rgba(0, 0, 0, 0.77);
+    text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    box-sizing: border-box;
+}
 
-Form should have the following:
+.style-1 {
+    margin-top: 0px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
 
-Product:
-Contact Name:
-Email:
-Phone Number:
-Summary of Issue or Request:
-Steps Taken:
-Resolved/Escalated:
+.style-2 {
+    vertical-align: middle;
+    box-sizing: border-box;
+    position: relative;
+    top: 10px;
+    right: -10px;
+}
 
-CD check list
+.style-3 {
+    box-sizing: border-box;
+}
 
-Verified CC: ✓
-Verified billing address: ✓
-Highlight features: ✓
-Rebuttals (2): ✓
-Survey:✓
-Comeback statement: ✓
-moving with competitor: yes/no
-competitor name:
+.style-4 {
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
 
--->
-    <form class="style-6">
+.style-5 {
+    vertical-align: middle;
+    box-sizing: border-box;
+}
 
-        <title class="style-7">AS - L1 Notes &amp; Checklist</title>
-        <div class="style-8">
-
-            <div class="style-9">
-                <h1 class="style-10">Account Services</h1>
-                <h4 class="style-11">L1 Notes &amp; Checklist</h4>
-            </div><br class="style-12" />
-            <div class="style-13">
-                <label for="inputCallerEmail" class="style-14"><strong class="style-15">Product</strong></label>
-                <div class="style-16">
-                    <input type="text" rows="1" cols="30" wrap="soft" class="style-17" />
-                </div>
-            </div>
-            <div class="style-18">
-                <label for="exampleFormControlTextarea1" class="style-19"><strong class="style-20">Contact Name</strong></label> <textarea class="style-21" rows="1"></textarea>
-            </div>
-            <div class="style-22">
-                <label for="inputCallerEmail" class="style-23"><strong class="style-24">E-Mail</strong></label>
-                <div class="style-25">
-                    <input type="text" rows="1" cols="30" wrap="soft" class="style-26" />
-                </div>
-            </div>
-            <div class="style-27">
-                <label for="inputCallerEmail" class="style-28"><strong class="style-29">Phone Number</strong></label>
-                <div class="style-30">
-                    <input type="text" rows="1" cols="30" wrap="soft" class="style-31" />
-                </div>
-            </div>
-            <div class="style-32">
-                <label for="exampleFormControlTextarea1" class="style-33"><b class="style-34">Summary of Issue or Request</b></label> <textarea class="style-35" rows="3"></textarea>
-            </div><br class="style-36" />
-            <div class="style-37">
-                <label for="exampleFormControlTextarea1" class="style-38"><b class="style-39">Steps Taken</b></label> <textarea class="style-40" rows="2"></textarea>
-            </div><br class="style-41" />
-            <div class="style-42">
-                <label for="inputCallerEmail" class="style-43"><strong class="style-44">Resolved/Escalated</strong></label>
-                <div class="style-45">
-                    <input type="text" rows="1" cols="30" wrap="soft" class="style-46" />
-                </div>
-            </div>
-            <!--
-
-Leaving this here for now:
-
-CD check list
-
-Verified CC: ✓
-Verified billing address: ✓
-Highlight features: ✓
-Rebuttals (2): ✓
-Survey:✓
-Comeback statement: ✓
-moving with competitor: yes/no
-competitor name:
-
--->
-            <div class="style-47">
-                <h2 class="style-48">CD Check List</h2>
-            </div><br class="style-49" />
-            <div class="style-50">
-                <div class="style-51">
-                    <input class="style-52" type="checkbox" value="" /> <label class="style-53" for="flexCheckDefault">
-                        Verified CC
-                    </label>
-                </div>
-                <div class="style-54">
-                    <input class="style-55" type="checkbox" value="" /> <label class="style-56" for="flexCheckDefault">
-                        Verified Billing Address
-                    </label>
-                </div>
-            </div><br class="style-57" />
-            <div class="style-58">
-                <div class="style-59">
-                    <input class="style-60" type="checkbox" value="" /> <label class="style-61" for="flexCheckDefault">
-                        Highlight Features
-                    </label>
-                </div>
-                <div class="style-62">
-                    <input class="style-63" type="checkbox" value="" /> <label class="style-64" for="flexCheckDefault">
-                        Rebuttals (2)
-                    </label>
-                </div>
-            </div><br class="style-65" />
-            <div class="style-66">
-                <div class="style-67">
-                    <input class="style-68" type="checkbox" value="" /> <label class="style-69" for="flexCheckDefault">
-                        Survey
-                    </label>
-                </div>
-                <div class="style-70">
-                    <input class="style-71" type="checkbox" value="" /> <label class="style-72" for="flexCheckDefault">
-                        Comeback Statement
-                    </label>
-                </div>
-            </div><br class="style-73" />
-            <div class="style-74">
-                <label for="inputCallerEmail" class="style-75"><strong class="style-76">Moving with Competitor (Y/N)</strong></label>
-                <div class="style-77">
-                    <input type="text" rows="1" cols="30" wrap="soft" class="style-78" />
-                </div>
-            </div>
-            <div class="style-79">
-                <label for="inputCallerEmail" class="style-80"><strong class="style-81">Competitor's Name</strong></label>
-                <div class="style-82">
-                    <input type="text" rows="1" cols="30" wrap="soft" class="style-83" />
-                </div>
-            </div> <br class="style-84" />
-        </div> <button type="button" class="style-85" value="Copy" onclick="createTemplate();">Create
-            Templates </button><br class="style-86" /><br class="style-87" /> <button type="button" class="style-88" onclick="location.reload();">
-            Reset
-        </button>
-    </form><br class="style-89" /><br class="style-90" />
-    <!----><br /><br />
-    -->
-
-    <footer class="style-91">
-        <p class="style-92">Copyright © 2022 - Designed by David Díaz<br class="style-93" /> </p>
-    </footer>
-</body>
-
-</html>
+.style-[_{{{CITATION{{{_1{](https://github.com/antydemant/lessons-2020/tree/0c6095f45bfd841914ac8e7e25f8c9df273dea69/02-closure-and-context%2Fhomework%2FREADME.md)[_{{{CITATION{{{_2{](https://github.com/akshay199328/ht_school/tree/22bce4b6a9317ca378087ed656fc493d10649b26/code%2Fwp-content%2Fthemes%2Fhtschools%2Femail-templates%2Fotp-confirmation.php)[_{{{CITATION{{{_3{](https://github.com/RajeswariPounraj/DiagramBuilder_WebApplication1110/tree/2906f309f36c2b9739f4b83aa5ecf43cd796b3a3/_content%2FSyncfusion.Blazor%2Fscripts%2Fsf-heatmap-877e12.min.js)[_{{{CITATION{{{_4{](https://github.com/htdangkhoa/valiant/tree/3065c986e66e967f8b139faddc52ee27eec994e4/src%2Frenderer%2Findex.js)
