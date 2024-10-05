@@ -28,12 +28,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
     createTemplate.addEventListener('click', function () {
         let template = '';
-        document.querySelectorAll('.form-group label').forEach(label => {
-            const input = label.nextElementSibling;
-            if (input && (input.tagName === 'INPUT' || input.tagName === 'TEXTAREA')) {
-                template += `${label.textContent}: ${input.value}\n`;
+        const formGroups = document.querySelectorAll('.form-group');
+        
+        formGroups.forEach(group => {
+            const label = group.querySelector('label');
+            const input = group.querySelector('input, textarea, select');
+            
+            if (input && input.style.display !== 'none') {
+                if (input.type === 'checkbox') {
+                    template += `${label.textContent}: ${input.checked ? '✓' : 'x'}\n`;
+                } else {
+                    template += `${label.textContent}: ${input.value}\n`;
+                }
             }
         });
+
+        // Add vertical spaces after specific fields
+        template = template.replace(/(Phone Number: .+\n)/, '$1\n');
+        template = template.replace(/(Issue or Request: .+\n)/, '$1\n');
+        template = template.replace(/(Steps Taken: .+\n)/, '$1\n');
+
         navigator.clipboard.writeText(template).then(() => {
             alert('Template copied to clipboard!');
         });
@@ -49,6 +63,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
         }
+    });
+
+    // Auto-resize textareas
+    document.querySelectorAll('.auto-resize').forEach(textarea => {
+        textarea.addEventListener('input', function () {
+            this.style.height = 'auto';
+            this.style.height = (this.scrollHeight) + 'px';
+        });
     });
 
     toggleElements(); // Initial call to set the correct visibility
