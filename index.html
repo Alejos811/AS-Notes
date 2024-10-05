@@ -1,120 +1,273 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AS Notes and Checklist Clone</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
-</head>
-<body class="style-0">
-    <p class="style-1">
-        <img src="images/GoTo_SLogo.png" alt="gotologo" width="92" height="41" class="style-2" />
-    </p>
-    <br class="style-3" />
-    <p class="style-4">
-        <img src="images/GoToLogo.png" alt="Logo" width="400" height="190" class="style-5" />
-    </p>
+    <style>
+        .style-0 {
+            background: rgba(0, 0, 0, 0.77);
+            cursor: auto;
+            cursor: auto;
+            margin: 0px;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            color: rgb(33, 37, 41);
+            background-color: rgba(0, 0, 0, 0.77);
+            text-size-adjust: 100%;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            box-sizing: border-box;
+        }
 
-    <!-- 
-    Form should have the following:
-    Product:
-    Contact Name:
-    Email:
-    Phone Number:
-    Summary of Issue or Request:
-    Steps Taken:
-    Resolved/Escalated:
-    CD check list
-    Verified CC: ✓
-    Verified billing address: ✓
-    Highlight features: ✓
-    Rebuttals (2): ✓
-    Survey: ✓
-    Comeback statement: ✓
-    moving with competitor: yes/no
-    competitor name:
-    -->
+        .style-1 {
+            margin-top: 0px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
 
-    <form class="style-6">
-        <title class="style-7">AS - L1 Notes & Checklist</title>
-        <div class="style-8">
-            <div class="style-9">
-                <h1 class="style-10">Account Services</h1>
-                <h4 class="style-11">L1 Notes & Checklist</h4>
-            </div>
-            <br class="style-12" />
-            <div class="style-13">
-                <label for="inputCallerEmail" class="style-14">
-                    <strong class="style-15">Product</strong>
-                </label>
-                <div class="style-16">
-                    <input type="text" rows="1" cols="30" wrap="soft" class="style-17" id="product" />
-                </div>
-            </div>
-            <div class="style-18">
-                <label for="exampleFormControlTextarea1" class="style-19">
-                    <strong class="style-20">Contact Name</strong>
-                </label>
-                <textarea class="style-21" rows="1" id="contactName"></textarea>
-            </div>
-            <div class="style-22">
-                <label for="inputCallerEmail" class="style-23">
-                    <strong class="style-24">E-Mail</strong>
-                </label>
-                <div class="style-25">
-                    <input type="text" rows="1" cols="30" wrap="soft" class="style-26" id="email" />
-                </div>
-            </div>
-            <div class="style-27">
-                <label for="inputCallerEmail" class="style-28">
-                    <strong class="style-29">Phone Number</strong>
-                </label>
-                <div class="style-30">
-                    <input type="text" rows="1" cols="30" wrap="soft" class="style-31" id="phoneNumber" />
-                </div>
-            </div>
-            <div class="style-32">
-                <label for="exampleFormControlTextarea1" class="style-33">
-                    <b class="style-34">Summary of Issue or Request</b>
-                </label>
-                <textarea class="style-35" rows="3" id="summary"></textarea>
-            </div>
-            <br class="style-36" />
-            <div class="style-37">
-                <label for="exampleFormControlTextarea1" class="style-38">
-                    <b class="style-39">Steps Taken</b>
-                </label>
-                <textarea class="style-40" rows="2" id="stepsTaken"></textarea>
-            </div>
-            <br class="style-41" />
-            <div class="style-42">
-                <label for="inputCallerEmail" class="style-43">
-                    <strong class="style-44">Resolved/Escalated</strong>
-                </label>
-                <div class="style-45">
-                    <input type="text" rows="1" cols="30" wrap="soft" class="style-46" id="resolvedEscalated" />
-                </div>
-            </div>
-            <div class="style-47">
-                <h2 class="style-48">CD Check List</h2>
-            </div>
-            <br class="style-49" />
-            <div class="style-50">
-                <div class="style-51">
-                    <input class="style-52" type="checkbox" value="" id="verifiedCC" /> 
-                    <label class="style-53" for="flexCheckDefault">
-                        Verified CC
-                    </label>
-                </div>
-                <div class="style-54">
-                    <input class="style-55" type="checkbox" value="" id="verifiedBillingAddress" /> 
-                    <label class="style-56" for="flexCheckDefault">
-                        Verified Billing Address
-                    </label>
-                </div>
-            </div>
-            <br class="style-57" />
-            <div class="style-58">
-                <div class="style-59">
-                    <input class="style-60" type="checkbox" value="" id="highlightFeatures" /> 
-                    <label class="style
+        .style-2 {
+            vertical-align: middle;
+            box-sizing: border-box;
+            position: relative;
+            top: 10px;
+            right: -10px;
+        }
+
+        .style-3 {
+            box-sizing: border-box;
+        }
+
+        .style-4 {
+            text-align: center;
+            margin-top: 0px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        .style-5 {
+            vertical-align: middle;
+            box-sizing: border-box;
+        }
+
+        .style-6 {
+            box-sizing: border-box;
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+            padding: 25px;
+            margin: auto;
+            width: 600px;
+            border-radius: 30px;
+            border: 16px groove rgb(212, 255, 0);
+        }
+
+        .style-7 {
+            box-sizing: border-box;
+        }
+
+        .style-8 {
+            box-sizing: border-box;
+        }
+
+        .style-9 {
+            box-sizing: border-box;
+            text-align: center;
+            text-decoration: underline solid rgb(238, 255, 0);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: 700;
+        }
+
+        .style-10 {
+            font-size: 40px;
+            margin-top: 0px;
+            margin-bottom: 8px;
+            font-weight: 500;
+            line-height: 48px;
+            box-sizing: border-box;
+        }
+
+        .style-11 {
+            font-size: 24px;
+            margin-top: 0px;
+            margin-bottom: 8px;
+            font-weight: 500;
+            line-height: 28.8px;
+            box-sizing: border-box;
+        }
+
+        .style-12 {
+            box-sizing: border-box;
+        }
+
+        .style-13 {
+            margin-bottom: 16px;
+            --bs-gutter-x: 1.5rem;
+            --bs-gutter-y: 0;
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 0px;
+            margin-right: -12px;
+            margin-left: -12px;
+            box-sizing: border-box;
+        }
+
+        .style-14 {
+            flex: 0 0 auto;
+            width: 83.3333%;
+            padding-top: 7px;
+            padding-bottom: 7px;
+            margin-bottom: 0px;
+            font-size: 16px;
+            line-height: 24px;
+            flex-shrink: 0;
+            max-width: 100%;
+            padding-right: 12px;
+            padding-left: 12px;
+            margin-top: 0px;
+            display: block;
+            box-sizing: border-box;
+        }
+
+        .style-15 {
+            font-weight: 700;
+            box-sizing: border-box;
+        }
+
+        .style-16 {
+            flex-shrink: 0;
+            width: 100%;
+            max-width: 100%;
+            padding-right: 12px;
+            padding-left: 12px;
+            margin-top: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-17 {
+            display: block;
+            width: 100%;
+            padding: 6px 12px;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            color: rgb(33, 37, 41);
+            background-color: rgb(255, 255, 255);
+            -webkit-background-clip: padding-box;
+            border: 1px solid rgb(206, 212, 218);
+            appearance: none;
+            border-radius: 4px;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            margin: 0px;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+            box-sizing: border-box;
+        }
+
+        .style-18 {
+            box-sizing: border-box;
+        }
+
+        .style-19 {
+            display: inline-block;
+            box-sizing: border-box;
+        }
+
+        .style-20 {
+            font-weight: 700;
+            box-sizing: border-box;
+        }
+
+        .style-21 {
+            min-height: 38px;
+            display: block;
+            width: 100%;
+            padding: 6px 12px;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            color: rgb(33, 37, 41);
+            background-color: rgb(255, 255, 255);
+            -webkit-background-clip: padding-box;
+            border: 1px solid rgb(206, 212, 218);
+            appearance: none;
+            border-radius: 4px;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            resize: vertical;
+            margin: 0px;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+            box-sizing: border-box;
+        }
+
+        .style-22 {
+            margin-bottom: 16px;
+            --bs-gutter-x: 1.5rem;
+            --bs-gutter-y: 0;
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 0px;
+            margin-right: -12px;
+            margin-left: -12px;
+            box-sizing: border-box;
+        }
+
+        .style-23 {
+            flex: 0 0 auto;
+            width: 83.3333%;
+            padding-top: 7px;
+            padding-bottom: 7px;
+            margin-bottom: 0px;
+            font-size: 16px;
+            line-height: 24px;
+            flex-shrink: 0;
+            max-width: 100%;
+            padding-right: 12px;
+            padding-left: 12px;
+            margin-top: 0px;
+            display: block;
+            box-sizing: border-box;
+        }
+
+        .style-24 {
+            font-weight: 700;
+            box-sizing: border-box;
+        }
+
+        .style-25 {
+            flex-shrink: 0;
+            width: 100%;
+            max-width: 100%;
+            padding-right: 12px;
+            padding-left: 12px;
+            margin-top: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-26 {
+            display: block;
+            width: 100%;
+            padding: 6px 12px;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            color: rgb(33, 37, 41);
+            background-color: rgb(255, 255, 255);
+            -webkit-background-clip: padding-box;
+            border: 1px solid rgb(206, 212, 218);
+            appearance: none;
+            border-radius: 4px;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            margin: 0px;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+            box-sizing: border-box;
+        }
+
+        .style-27 {
+            margin-bottom: 16px;
+            --bs-gutter-x: 1.5rem;
+            --bs-gutter-y: 0;
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 0px;
+            margin-right: -12px;
+            margin-left: -12px;
+            box-sizing: border-box;
+        }
+
+        .style-28 {
+            flex: 0
