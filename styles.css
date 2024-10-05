@@ -50,6 +50,11 @@ h1, h4 {
     box-sizing: border-box;
 }
 
+.auto-resize {
+    overflow: hidden;
+    resize: none;
+}
+
 .checkbox-group {
     display: flex;
     flex-wrap: wrap;
@@ -82,4 +87,9 @@ footer {
     text-align: center;
     margin-top: 24px;
     color: white;
+}
+
+.cd-checklist-label {
+    font-weight: bold;
+    font-size: 1.5em;
 }
