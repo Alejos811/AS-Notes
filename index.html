@@ -10,45 +10,25 @@
     <div class="container">
         <h1>Account Services</h1>
         <h4>L1 Notes & Checklist</h4>
-        
-        <!-- Toggle for Live Call / Offline Case -->
-        <div class="form-group">
-            <label for="serviceType">Service Type</label>
-            <select id="serviceType" class="form-control">
-                <option value="liveCall">Live Call</option>
-                <option value="offlineCase">Offline Case</option>
-            </select>
-        </div>
-
-        <!-- Toggle for Cancellation -->
-        <div class="form-group">
-            <label for="cancellation">Cancellation?</label>
-            <select id="cancellation" class="form-control">
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-            </select>
-        </div>
-
         <form>
             <div class="form-group">
                 <label for="product">Product</label>
-                <input list="products" id="product" class="form-control">
-                <datalist id="products">
-                    <option value="Grasshopper">
-                    <option value="GoToConnect">
-                    <option value="GoToMeeting">
-                    <option value="GoToWebinar">
-                    <option value="GoToTraining">
-                    <option value="Join.me">
-                    <option value="GoToMyPC">
-                    <option value="LogMeIn Pro">
-                    <option value="Central">
-                    <option value="Hamachi">
-                    <option value="GoToAssist">
-                    <option value="Rescue">
-                    <option value="OpenVoice">
-                    <option value="GoToRoom">
-                </datalist>
+                <select id="product" class="form-control" style="width: 100%;">
+                    <option value="Grasshopper">Grasshopper</option>
+                    <option value="GoToConnect">GoToConnect</option>
+                    <option value="GoToMeeting">GoToMeeting</option>
+                    <option value="GoToWebinar">GoToWebinar</option>
+                    <option value="GoToTraining">GoToTraining</option>
+                    <option value="Join.me">Join.me</option>
+                    <option value="GoToMyPC">GoToMyPC</option>
+                    <option value="LogMeIn Pro">LogMeIn Pro</option>
+                    <option value="Central">Central</option>
+                    <option value="Hamachi">Hamachi</option>
+                    <option value="GoToAssist">GoToAssist</option>
+                    <option value="Rescue">Rescue</option>
+                    <option value="OpenVoice">OpenVoice</option>
+                    <option value="GoToRoom">GoToRoom</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="contactName">Contact Name</label>
@@ -73,85 +53,89 @@
             <div class="form-group">
                 <label for="outcome">Outcome</label>
                 <select id="outcome" class="form-control">
-                    <option value="resolved">Resolved</option>
-                    <option value="notResolved">Not Resolved</option>
-                    <option value="requiresFollowUp">Requires Follow-up</option>
-                    <option value="transferred">Transferred</option>
-                    <option value="hangUp">Hang up</option>
+                    <option value="Resolved">Resolved</option>
+                    <option value="Not Resolved">Not Resolved</option>
+                    <option value="Requires Follow-up">Requires Follow-up</option>
+                    <option value="Transferred">Transferred</option>
+                    <option value="Hang up">Hang up</option>
                 </select>
             </div>
-
-            <!-- CD Check List Label -->
             <div class="form-group">
-                <label class="cd-checklist-label">CD Check List</label>
+                <label for="serviceType">Service Type</label>
+                <select id="serviceType" class="form-control">
+                    <option value="liveCall">Live Call</option>
+                    <option value="offlineCase">Offline Case</option>
+                </select>
             </div>
-
-            <!-- Conditional Checkboxes -->
-            <div class="form-group" id="offlineCaseCheckbox" style="display: none;">
-                <input type="checkbox" id="requestFromMAH">
-                <label for="requestFromMAH">Request coming from MAH</label>
-            </div>
-
-            <div class="form-group checkbox-group">
-                <div>
-                    <input type="checkbox" id="verifiedPin">
-                    <label for="verifiedPin">Verified pin</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="verifiedCC">
-                    <label for="verifiedCC">Verified CC</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="verifiedBillingAddress">
-                    <label for="verifiedBillingAddress">Verified Billing Address</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="survey">
-                    <label for="survey">Survey</label>
-                </div>
-            </div>
-
-            <div class="form-group" id="cancellationCheckboxes" style="display: none;">
-                <div>
-                    <input type="checkbox" id="highlightFeatures">
-                    <label for="highlightFeatures">Highlight Features</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="rebuttals">
-                    <label for="rebuttals">Rebuttals (2)</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="comebackStatement">
-                    <label for="comebackStatement">Comeback Statement</label>
-                </div>
-            </div>
-
-            <!-- Conditional Textboxes -->
-            <div class="form-group" id="cancellationTextboxes" style="display: none;">
-                <label for="movingWithCompetitor">Moving with Competitor (Y/N)</label>
-                <select id="movingWithCompetitor" class="form-control">
+            <div class="form-group">
+                <label for="cancellation">Cancellation?</label>
+                <select id="cancellation" class="form-control">
                     <option value="yes">Yes</option>
                     <option value="no">No</option>
                 </select>
-                <label for="competitorsName">Competitor's Name</label>
-                <input type="text" id="competitorsName" class="form-control">
             </div>
-
-            <!-- Buttons -->
-            <div class="form-group">
-                <button type="button" id="createTemplate" class="form-control button-green">Create Template</button>
+            <div id="offlineCaseCheckbox" class="form-group" style="display: none;">
+                <label for="requestFromMAH">Request coming from MAH</label>
+                <input type="checkbox" id="requestFromMAH" class="form-control">
             </div>
             <div class="form-group">
-                <button type="button" id="resetForm" class="form-control button-red">Reset</button>
+                <label class="bold" style="font-size: 1.5em;">CD Check List</label>
+                <div class="checkbox-group">
+                    <div>
+                        <label for="verifiedPin">Verified Pin</label>
+                        <input type="checkbox" id="verifiedPin" class="form-control">
+                    </div>
+                    <div>
+                        <label for="verifiedCC">Verified CC</label>
+                        <input type="checkbox" id="verifiedCC" class="form-control">
+                    </div>
+                    <div>
+                        <label for="verifiedBillingAddress">Verified Billing Address</label>
+                        <input type="checkbox" id="verifiedBillingAddress" class="form-control">
+                    </div>
+                    <div>
+                        <label for="survey">Survey</label>
+                        <input type="checkbox" id="survey" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div id="cancellationCheckboxes" class="form-group" style="display: block;">
+                <div>
+                    <label for="highlightFeatures">Highlight Features</label>
+                    <input type="checkbox" id="highlightFeatures" class="form-control">
+                </div>
+                <div>
+                    <label for="rebuttals">Rebuttals (2)</label>
+                    <input type="checkbox" id="rebuttals" class="form-control">
+                </div>
+                <div>
+                    <label for="comebackStatement">Comeback Statement</label>
+                    <input type="checkbox" id="comebackStatement" class="form-control">
+                </div>
+            </div>
+            <div id="cancellationTextboxes" class="form-group" style="display: block;">
+                <div>
+                    <label for="movingWithCompetitor">Moving with Competitor (Y/N)</label>
+                    <select id="movingWithCompetitor" class="form-control">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="competitorsName">Competitor's Name</label>
+                    <input type="text" id="competitorsName" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="button" id="createTemplate" class="btn btn-green">Create Template</button>
+                <button type="button" id="resetForm" class="btn btn-red">Reset</button>
             </div>
         </form>
+        <footer>
+            <p>Designed by Alejandro Soto</p>
+            <p>Developed with Copilot</p>
+        </footer>
     </div>
-
-    <footer>
-        <p>Designed by Alejandro Soto</p>
-        <p>Developed with Microsoft Copilot</p>
-    </footer>
-
     <script src="script.js"></script>
 </body>
 </html>
