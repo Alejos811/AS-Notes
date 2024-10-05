@@ -50,46 +50,34 @@ h1, h4 {
     box-sizing: border-box;
 }
 
-.auto-resize {
-    overflow: hidden;
-    resize: none;
-}
-
 .checkbox-group {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
 }
 
-.checkbox-group div {
+.checkbox-group > div {
     flex: 1 1 45%;
 }
 
-.button-green {
+.bold {
+    font-weight: bold;
+}
+
+.btn {
+    font-weight: bold;
+    width: auto;
+    padding: 10px 20px;
+    margin-top: 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-green {
     background-color: green;
     color: white;
-    font-weight: bold;
-    width: auto;
 }
 
-.button-red {
+.btn-red {
     background-color: red;
-    color: white;
-    font-weight: bold;
-    width: auto;
-}
-
-.form-group + .form-group {
-    margin-top: 24px;
-}
-
-footer {
-    text-align: center;
-    margin-top: 24px;
-    color: white;
-}
-
-.cd-checklist-label {
-    font-weight: bold;
-    font-size: 1.5em;
-}
