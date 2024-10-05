@@ -48,21 +48,21 @@
                     <strong class="style-15">Product</strong>
                 </label>
                 <div class="style-16">
-                    <input type="text" rows="1" cols="30" wrap="soft" class="style-17" />
+                    <input type="text" rows="1" cols="30" wrap="soft" class="style-17" id="product" />
                 </div>
             </div>
             <div class="style-18">
                 <label for="exampleFormControlTextarea1" class="style-19">
                     <strong class="style-20">Contact Name</strong>
                 </label>
-                <textarea class="style-21" rows="1"></textarea>
+                <textarea class="style-21" rows="1" id="contactName"></textarea>
             </div>
             <div class="style-22">
                 <label for="inputCallerEmail" class="style-23">
                     <strong class="style-24">E-Mail</strong>
                 </label>
                 <div class="style-25">
-                    <input type="text" rows="1" cols="30" wrap="soft" class="style-26" />
+                    <input type="text" rows="1" cols="30" wrap="soft" class="style-26" id="email" />
                 </div>
             </div>
             <div class="style-27">
@@ -70,21 +70,21 @@
                     <strong class="style-29">Phone Number</strong>
                 </label>
                 <div class="style-30">
-                    <input type="text" rows="1" cols="30" wrap="soft" class="style-31" />
+                    <input type="text" rows="1" cols="30" wrap="soft" class="style-31" id="phoneNumber" />
                 </div>
             </div>
             <div class="style-32">
                 <label for="exampleFormControlTextarea1" class="style-33">
                     <b class="style-34">Summary of Issue or Request</b>
                 </label>
-                <textarea class="style-35" rows="3"></textarea>
+                <textarea class="style-35" rows="3" id="summary"></textarea>
             </div>
             <br class="style-36" />
             <div class="style-37">
                 <label for="exampleFormControlTextarea1" class="style-38">
                     <b class="style-39">Steps Taken</b>
                 </label>
-                <textarea class="style-40" rows="2"></textarea>
+                <textarea class="style-40" rows="2" id="stepsTaken"></textarea>
             </div>
             <br class="style-41" />
             <div class="style-42">
@@ -92,7 +92,7 @@
                     <strong class="style-44">Resolved/Escalated</strong>
                 </label>
                 <div class="style-45">
-                    <input type="text" rows="1" cols="30" wrap="soft" class="style-46" />
+                    <input type="text" rows="1" cols="30" wrap="soft" class="style-46" id="resolvedEscalated" />
                 </div>
             </div>
             <div class="style-47">
@@ -101,13 +101,13 @@
             <br class="style-49" />
             <div class="style-50">
                 <div class="style-51">
-                    <input class="style-52" type="checkbox" value="" /> 
+                    <input class="style-52" type="checkbox" value="" id="verifiedCC" /> 
                     <label class="style-53" for="flexCheckDefault">
                         Verified CC
                     </label>
                 </div>
                 <div class="style-54">
-                    <input class="style-55" type="checkbox" value="" /> 
+                    <input class="style-55" type="checkbox" value="" id="verifiedBillingAddress" /> 
                     <label class="style-56" for="flexCheckDefault">
                         Verified Billing Address
                     </label>
@@ -116,61 +116,5 @@
             <br class="style-57" />
             <div class="style-58">
                 <div class="style-59">
-                    <input class="style-60" type="checkbox" value="" /> 
-                    <label class="style-61" for="flexCheckDefault">
-                        Highlight Features
-                    </label>
-                </div>
-                <div class="style-62">
-                    <input class="style-63" type="checkbox" value="" /> 
-                    <label class="style-64" for="flexCheckDefault">
-                        Rebuttals (2)
-                    </label>
-                </div>
-            </div>
-            <br class="style-65" />
-            <div class="style-66">
-                <div class="style-67">
-                    <input class="style-68" type="checkbox" value="" /> 
-                    <label class="style-69" for="flexCheckDefault">
-                        Survey
-                    </label>
-                </div>
-                <div class="style-70">
-                    <input class="style-71" type="checkbox" value="" /> 
-                    <label class="style-72" for="flexCheckDefault">
-                        Comeback Statement
-                    </label>
-                </div>
-            </div>
-            <br class="style-73" />
-            <div class="style-74">
-                <label for="inputCallerEmail" class="style-75">
-                    <strong class="style-76">Moving with Competitor (Y/N)</strong>
-                </label>
-                <div class="style-77">
-                    <input type="text" rows="1" cols="30" wrap="soft" class="style-78" />
-                </div>
-            </div>
-            <div class="style-79">
-                <label for="inputCallerEmail" class="style-80">
-                    <strong class="style-81">Competitor's Name</strong>
-                </label>
-                <div class="style-82">
-                    <input type="text" rows="1" cols="30" wrap="soft" class="style-83" />
-                </div>
-            </div>
-            <br class="style-84" />
-        </div>
-        <button type="button" class="style-85" value="Copy" onclick="createTemplate();">Create Templates</button>
-        <br class="style-86" />
-        <br class="style-87" />
-        <button type="button" class="style-88" onclick="location.reload();">Reset</button>
-    </form>
-    <br class="style-89" />
-    <br class="style-90" />
-    <footer class="style-91">
-        <p class="style-92">Copyright © 2022 - Designed by David Díaz<br class="style-93" /></p>
-    </footer>
-</body>
-</html>
+                    <input class="style-60" type="checkbox" value="" id="highlightFeatures" /> 
+                    <label class="style
