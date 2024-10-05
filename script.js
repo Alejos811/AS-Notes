@@ -1,95 +1,55 @@
-body {
-    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    color: rgb(33, 37, 41);
-    background-color: rgba(0, 0, 0, 0.77);
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+document.addEventListener('DOMContentLoaded', function () {
+    const serviceType = document.getElementById('serviceType');
+    const cancellation = document.getElementById('cancellation');
+    const offlineCaseCheckbox = document.getElementById('offlineCaseCheckbox');
+    const cancellationCheckboxes = document.getElementById('cancellationCheckboxes');
+    const cancellationTextboxes = document.getElementById('cancellationTextboxes');
+    const createTemplate = document.getElementById('createTemplate');
+    const resetForm = document.getElementById('resetForm');
 
-.container {
-    width: 600px;
-    margin: auto;
-    padding: 25px;
-    background-color: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
-    border-radius: 30px;
-    border: 16px groove rgb(212, 255, 0);
-}
+    function toggleElements() {
+        if (serviceType.value === 'offlineCase') {
+            offlineCaseCheckbox.style.display = 'block';
+        } else {
+            offlineCaseCheckbox.style.display = 'none';
+        }
 
-h1, h4 {
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 16px;
-}
+        if (cancellation.value === 'yes') {
+            cancellationCheckboxes.style.display = 'block';
+            cancellationTextboxes.style.display = 'block';
+        } else {
+            cancellationCheckboxes.style.display = 'none';
+            cancellationTextboxes.style.display = 'none';
+        }
+    }
 
-.form-group {
-    margin-bottom: 16px;
-}
+    serviceType.addEventListener('change', toggleElements);
+    cancellation.addEventListener('change', toggleElements);
 
-.form-control {
-    min-height: 38px;
-    display: block;
-    width: 100%;
-    padding: 6px 12px;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    color: rgb(33, 37, 41);
-    background-color: rgb(255, 255, 255);
-    -webkit-background-clip: padding-box;
-    border: 1px solid rgb(206, 212, 218);
-    appearance: none;
-    border-radius: 4px;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    resize: vertical;
-    margin: 0;
-    box-sizing: border-box;
-}
+    createTemplate.addEventListener('click', function () {
+        let template = '';
+        document.querySelectorAll('.form-group label').forEach(label => {
+            const input = label.nextElementSibling;
+            if (input && (input.tagName === 'INPUT' || input.tagName === 'TEXTAREA')) {
+                template += `${label.textContent}: ${input.value}\n`;
+            }
+        });
+        navigator.clipboard.writeText(template).then(() => {
+            alert('Template copied to clipboard!');
+        });
+    });
 
-.auto-resize {
-    overflow: hidden;
-    resize: none;
-}
+    resetForm.addEventListener('click', function () {
+        if (confirm('Are you sure you want to reset the form?')) {
+            document.querySelectorAll('.form-control').forEach(input => {
+                if (input.type === 'checkbox' || input.type === 'radio') {
+                    input.checked = false;
+                } else {
+                    input.value = '';
+                }
+            });
+        }
+    });
 
-.checkbox-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-}
-
-.checkbox-group div {
-    flex: 1 1 45%;
-}
-
-.button-green {
-    background-color: green;
-    color: white;
-    font-weight: bold;
-    width: auto;
-}
-
-.button-red {
-    background-color: red;
-    color: white;
-    font-weight: bold;
-    width: auto;
-}
-
-.form-group + .form-group {
-    margin-top: 24px;
-}
-
-footer {
-    text-align: center;
-    margin-top: 24px;
-    color: white;
-}
-
-.cd-checklist-label {
-    font-weight: bold;
-    font-size: 1.5em;
-}
+    toggleElements(); // Initial call to set the correct visibility
+});
