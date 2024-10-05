@@ -32,7 +32,23 @@
         <form>
             <div class="form-group">
                 <label for="product">Product</label>
-                <input type="text" id="product" class="form-control" style="width: 518px; height: 38px;">
+                <input list="products" id="product" class="form-control">
+                <datalist id="products">
+                    <option value="Grasshopper">
+                    <option value="GoToConnect">
+                    <option value="GoToMeeting">
+                    <option value="GoToWebinar">
+                    <option value="GoToTraining">
+                    <option value="Join.me">
+                    <option value="GoToMyPC">
+                    <option value="LogMeIn Pro">
+                    <option value="Central">
+                    <option value="Hamachi">
+                    <option value="GoToAssist">
+                    <option value="Rescue">
+                    <option value="OpenVoice">
+                    <option value="GoToRoom">
+                </datalist>
             </div>
             <div class="form-group">
                 <label for="contactName">Contact Name</label>
@@ -56,7 +72,13 @@
             </div>
             <div class="form-group">
                 <label for="outcome">Outcome</label>
-                <textarea id="outcome" class="form-control"></textarea>
+                <select id="outcome" class="form-control">
+                    <option value="resolved">Resolved</option>
+                    <option value="notResolved">Not Resolved</option>
+                    <option value="requiresFollowUp">Requires Follow-up</option>
+                    <option value="transferred">Transferred</option>
+                    <option value="hangUp">Hang up</option>
+                </select>
             </div>
 
             <!-- Conditional Checkboxes -->
@@ -65,43 +87,65 @@
                 <label for="requestFromMAH">Request coming from MAH</label>
             </div>
 
-            <div class="form-group">
-                <input type="checkbox" id="verifiedPin">
-                <label for="verifiedPin">Verified pin</label>
-                <input type="checkbox" id="verifiedCC">
-                <label for="verifiedCC">Verified CC</label>
-            </div>
-            <div class="form-group">
-                <input type="checkbox" id="verifiedBillingAddress">
-                <label for="verifiedBillingAddress">Verified Billing Address</label>
-                <input type="checkbox" id="survey">
-                <label for="survey">Survey</label>
+            <div class="form-group checkbox-group">
+                <div>
+                    <input type="checkbox" id="verifiedPin">
+                    <label for="verifiedPin">Verified pin</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="verifiedCC">
+                    <label for="verifiedCC">Verified CC</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="verifiedBillingAddress">
+                    <label for="verifiedBillingAddress">Verified Billing Address</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="survey">
+                    <label for="survey">Survey</label>
+                </div>
             </div>
 
             <div class="form-group" id="cancellationCheckboxes" style="display: none;">
-                <input type="checkbox" id="highlightFeatures">
-                <label for="highlightFeatures">Highlight Features</label>
-                <input type="checkbox" id="rebuttals">
-                <label for="rebuttals">Rebuttals (2)</label>
-                <input type="checkbox" id="comebackStatement">
-                <label for="comebackStatement">Comeback Statement</label>
+                <div>
+                    <input type="checkbox" id="highlightFeatures">
+                    <label for="highlightFeatures">Highlight Features</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="rebuttals">
+                    <label for="rebuttals">Rebuttals (2)</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="comebackStatement">
+                    <label for="comebackStatement">Comeback Statement</label>
+                </div>
             </div>
 
             <!-- Conditional Textboxes -->
             <div class="form-group" id="cancellationTextboxes" style="display: none;">
                 <label for="movingWithCompetitor">Moving with Competitor (Y/N)</label>
-                <input type="text" id="movingWithCompetitor" class="form-control">
+                <select id="movingWithCompetitor" class="form-control">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
                 <label for="competitorsName">Competitor's Name</label>
                 <input type="text" id="competitorsName" class="form-control">
             </div>
 
             <!-- Buttons -->
             <div class="form-group">
-                <button type="button" id="createTemplate" class="form-control">Create Template</button>
-                <button type="button" id="resetForm" class="form-control">Reset</button>
+                <button type="button" id="createTemplate" class="form-control button-green">Create Template</button>
+            </div>
+            <div class="form-group">
+                <button type="button" id="resetForm" class="form-control button-red">Reset</button>
             </div>
         </form>
     </div>
+
+    <footer>
+        <p>Designed by Alejandro Soto</p>
+        <p>Developed with Microsoft Copilot</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
