@@ -61,23 +61,4 @@ h1, h4 {
 }
 
 .bold {
-    font-weight: bold;
-}
-
-.btn {
-    font-weight: bold;
-    width: auto;
-    padding: 10px 20px;
-    margin-top: 24px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.btn-green {
-    background-color: green;
-    color: white;
-}
-
-.btn-red {
-    background-color: red;
+    font-weight
