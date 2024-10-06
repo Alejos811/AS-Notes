@@ -61,4 +61,47 @@ h1, h4 {
 }
 
 .bold {
-    font-weight
+    font-weight: bold;
+}
+
+.btn {
+    font-weight: bold;
+    width: auto;
+    padding: 10px 20px;
+    margin-top: 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-green {
+    background-color: green;
+    color: white;
+}
+
+.btn-red {
+    background-color: red;
+    color: white;
+}
+
+.toggle-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.toggle-group input[type="radio"] {
+    display: none;
+}
+
+.toggle-group label {
+    background-color: #ccc;
+    border-radius: 15px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.toggle-group input[type="radio"]:checked + label {
+    background-color: #007bff;
+    color: white;
+}
