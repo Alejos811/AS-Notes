@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const serviceType = document.getElementById('serviceType');
-    const cancellation = document.getElementById('cancellation');
+    const serviceTypeRadios = document.querySelectorAll('input[name="serviceType"]');
+    const cancellationRadios = document.querySelectorAll('input[name="cancellation"]');
     const offlineCaseCheckbox = document.getElementById('offlineCaseCheckbox');
     const cancellationCheckboxes = document.getElementById('cancellationCheckboxes');
     const cancellationTextboxes = document.getElementById('cancellationTextboxes');
@@ -8,13 +8,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const resetForm = document.getElementById('resetForm');
 
     function toggleElements() {
-        if (serviceType.value === 'offlineCase') {
+        const serviceType = document.querySelector('input[name="serviceType"]:checked').value;
+        const cancellation = document.querySelector('input[name="cancellation"]:checked').value;
+
+        if (serviceType === 'offlineCase') {
             offlineCaseCheckbox.style.display = 'block';
         } else {
             offlineCaseCheckbox.style.display = 'none';
         }
 
-        if (cancellation.value === 'yes') {
+        if (cancellation === 'yes') {
             cancellationCheckboxes.style.display = 'block';
             cancellationTextboxes.style.display = 'block';
         } else {
@@ -23,8 +26,13 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    serviceType.addEventListener('change', toggleElements);
-    cancellation.addEventListener('change', toggleElements);
+    serviceTypeRadios.forEach(radio => {
+        radio.addEventListener('change', toggleElements);
+    });
+
+    cancellationRadios.forEach(radio => {
+        radio.addEventListener('change', toggleElements);
+    });
 
     createTemplate.addEventListener('click', function () {
         let template = '';
