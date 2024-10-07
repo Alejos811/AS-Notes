@@ -105,3 +105,16 @@ h1, h4 {
     background-color: #007bff;
     color: white;
 }
+
+/* Additional styles for new elements */
+.auto-resize {
+    overflow: hidden;
+    resize: none;
+}
+
+footer {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 14px;
+    color: #aaa;
+}
