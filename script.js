@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
     createTemplate.addEventListener('click', function () {
         let template = '';
         const formGroups = document.querySelectorAll('.form-group');
+        let cdCheckListAdded = false;
 
         formGroups.forEach(group => {
             const label = group.querySelector('label');
@@ -45,9 +46,15 @@ document.addEventListener('DOMContentLoaded', function () {
             inputs.forEach(input => {
                 if (input && input.offsetParent !== null) { // Check if the input is visible
                     if (input.type === 'checkbox') {
-                        template += `${label.textContent}: ${input.checked ? '✓' : 'x'}\n`;
+                        if (label.textContent === 'CD Check List' && !cdCheckListAdded) {
+                            template += `${label.textContent}:\n`;
+                            cdCheckListAdded = true;
+                        }
+                        template += `${input.nextElementSibling.textContent}: ${input.checked ? '✓' : 'x'}\n`;
                     } else if (input.tagName.toLowerCase() === 'select') {
                         template += `${label.textContent}: ${input.options[input.selectedIndex].text}\n`;
+                    } else if (input.tagName.toLowerCase() === 'textarea') {
+                        template += `${label.textContent}:\n${input.value}\n\n`;
                     } else {
                         template += `${label.textContent}: ${input.value}\n`;
                     }
@@ -57,8 +64,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Add vertical spaces after specific fields
         template = template.replace(/(Phone Number: .+\n)/, '$1\n');
-        template = template.replace(/(Issue or Request: .+\n)/, '$1\n');
-        template = template.replace(/(Steps Taken: .+\n)/, '$1\n');
+        template = template.replace(/(Issue or Request:\n.+\n\n)/, '$1\n');
+        template = template.replace(/(Steps Taken:\n.+\n\n)/, '$1\n');
 
         navigator.clipboard.writeText(template).then(() => {
             alert('Template copied to clipboard!');
