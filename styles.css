@@ -118,3 +118,10 @@ footer {
     font-size: 14px;
     color: #aaa;
 }
+
+/* Ensure checkboxes are interactive */
+input[type="checkbox"] {
+    display: inline-block;
+    width: auto;
+    margin-right: 10px;
+}
