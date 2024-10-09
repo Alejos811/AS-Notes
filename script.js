@@ -37,18 +37,22 @@ document.addEventListener('DOMContentLoaded', function () {
     createTemplate.addEventListener('click', function () {
         let template = '';
         const formGroups = document.querySelectorAll('.form-group');
-        
+
         formGroups.forEach(group => {
             const label = group.querySelector('label');
-            const input = group.querySelector('input, textarea, select');
-            
-            if (input && input.style.display !== 'none') {
-                if (input.type === 'checkbox') {
-                    template += `${label.textContent}: ${input.checked ? '✓' : 'x'}\n`;
-                } else {
-                    template += `${label.textContent}: ${input.value}\n`;
+            const inputs = group.querySelectorAll('input, textarea, select');
+
+            inputs.forEach(input => {
+                if (input && input.offsetParent !== null) { // Check if the input is visible
+                    if (input.type === 'checkbox') {
+                        template += `${label.textContent}: ${input.checked ? '✓' : 'x'}\n`;
+                    } else if (input.tagName.toLowerCase() === 'select') {
+                        template += `${label.textContent}: ${input.options[input.selectedIndex].text}\n`;
+                    } else {
+                        template += `${label.textContent}: ${input.value}\n`;
+                    }
                 }
-            }
+            });
         });
 
         // Add vertical spaces after specific fields
@@ -80,9 +84,6 @@ document.addEventListener('DOMContentLoaded', function () {
             this.style.height = (this.scrollHeight) + 'px';
         });
     });
-
-    // Initialize Select2 for dropdowns
-    $('.select2').select2();
 
     toggleElements(); // Initial call to set the correct visibility
 });
