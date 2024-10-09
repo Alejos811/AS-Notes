@@ -43,4 +43,85 @@ h1, h4 {
     -webkit-background-clip: padding-box;
     border: 1px solid rgb(206, 212, 218);
     appearance: none;
-    border-radius
+    border-radius: 4px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    resize: vertical;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.checkbox-group > div {
+    flex: 1 1 45%;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.btn {
+    font-weight: bold;
+    width: auto;
+    padding: 10px 20px;
+    margin-top: 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-green {
+    background-color: green;
+    color: white;
+}
+
+.btn-red {
+    background-color: red;
+    color: white;
+}
+
+.toggle-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.toggle-group input[type="radio"] {
+    display: none;
+}
+
+.toggle-group label {
+    background-color: #ccc;
+    border-radius: 15px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.toggle-group input[type="radio"]:checked + label {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Additional styles for new elements */
+.auto-resize {
+    overflow: hidden;
+    resize: none;
+}
+
+footer {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* Ensure checkboxes are interactive */
+input[type="checkbox"] {
+    display: inline-block;
+    width: auto;
+    margin-right: 10px;
+}
