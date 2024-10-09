@@ -81,5 +81,8 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    // Initialize Select2 for dropdowns
+    $('.select2').select2();
+
     toggleElements(); // Initial call to set the correct visibility
 });
