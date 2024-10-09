@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Account Services</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
 </head>
 <body>
     <div class="container">
@@ -32,22 +31,23 @@
             </div>
             <div class="form-group">
                 <label for="product">Product</label>
-                <select id="product" class="form-control select2" style="width: 100%;">
-                    <option value="Grasshopper">Grasshopper</option>
-                    <option value="GoToConnect">GoToConnect</option>
-                    <option value="GoToMeeting">GoToMeeting</option>
-                    <option value="GoToWebinar">GoToWebinar</option>
-                    <option value="GoToTraining">GoToTraining</option>
-                    <option value="Join.me">Join.me</option>
-                    <option value="GoToMyPC">GoToMyPC</option>
-                    <option value="LogMeIn Pro">LogMeIn Pro</option>
-                    <option value="Central">Central</option>
-                    <option value="Hamachi">Hamachi</option>
-                    <option value="GoToAssist">GoToAssist</option>
-                    <option value="Rescue">Rescue</option>
-                    <option value="OpenVoice">OpenVoice</option>
-                    <option value="GoToRoom">GoToRoom</option>
-                </select>
+                <input type="search" id="product" list="productList" placeholder="Select or type a product..." class="form-control">
+                <datalist id="productList">
+                    <option value="Grasshopper">
+                    <option value="GoToConnect">
+                    <option value="GoToMeeting">
+                    <option value="GoToWebinar">
+                    <option value="GoToTraining">
+                    <option value="Join.me">
+                    <option value="GoToMyPC">
+                    <option value="LogMeIn Pro">
+                    <option value="Central">
+                    <option value="Hamachi">
+                    <option value="GoToAssist">
+                    <option value="Rescue">
+                    <option value="OpenVoice">
+                    <option value="GoToRoom">
+                </datalist>
             </div>
             <div class="form-group">
                 <label for="contactName">Contact Name</label>
@@ -71,13 +71,14 @@
             </div>
             <div class="form-group">
                 <label for="outcome">Outcome</label>
-                <select id="outcome" class="form-control select2" style="width: 100%;">
-                    <option value="Resolved">Resolved</option>
-                    <option value="Not Resolved">Not Resolved</option>
-                    <option value="Requires Follow-up">Requires Follow-up</option>
-                    <option value="Transferred">Transferred</option>
-                    <option value="Hang up">Hang up</option>
-                </select>
+                <input type="search" id="outcome" list="outcomeList" placeholder="Select or type an outcome..." class="form-control">
+                <datalist id="outcomeList">
+                    <option value="Resolved">
+                    <option value="Not Resolved">
+                    <option value="Requires Follow-up">
+                    <option value="Transferred">
+                    <option value="Hang up">
+                </datalist>
             </div>
             <div id="offlineCaseCheckbox" class="form-group" style="display: none;">
                 <input type="checkbox" id="requestFromMAH">
@@ -141,8 +142,6 @@
             <p>Developed with Copilot</p>
         </footer>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
