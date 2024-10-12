@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
         template = template.replace(/(Phone Number: .+\n)/, '$1\n');
         template = template.replace(/(Issue or Request:\n.+\n\n)/, '\n$1\n');
         template = template.replace(/(Steps Taken:\n.+\n\n)/, '$1\n');
-        template = template.replace(/(Outcome: .+\n)\n/, '$1');
+        template = template.replace(/(Outcome: .+\n)\n/, '$1\n');
 
         navigator.clipboard.writeText(template).then(() => {
             alert('Template copied to clipboard!');
