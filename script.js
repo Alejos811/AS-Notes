@@ -51,6 +51,12 @@ document.addEventListener('DOMContentLoaded', function () {
         let cdCheckListAdded = false;
         let requestFromMAHAdded = false;
 
+        // Include Service Type and Cancellation radio button values
+        const serviceType = document.querySelector('input[name="serviceType"]:checked').nextElementSibling.textContent;
+        const cancellation = document.querySelector('input[name="cancellation"]:checked').nextElementSibling.textContent;
+        template += `Service Type: ${serviceType}\n`;
+        template += `Cancellation: ${cancellation}\n\n`;
+
         formGroups.forEach(group => {
             const label = group.querySelector('label');
             const inputs = group.querySelectorAll('input, textarea, select');
@@ -82,9 +88,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Add vertical spaces after specific fields
         template = template.replace(/(Phone Number: .+\n)/, '$1\n');
-        template = template.replace(/(Issue or Request:\n.+\n\n)/, '\n$1\n');
+        template = template.replace(/(Issue or Request:\n.+\n\n)/, '$1\n');
         template = template.replace(/(Steps Taken:\n.+\n\n)/, '$1\n');
-        template = template.replace(/(Outcome: .+\n)\n/, '$1');
+        template = template.replace(/(Outcome: .+\n)\n/, '\n$1\n\n');
+        template = template.replace(/(CD Check List:\n\n.+\n)/, '$1\n');
 
         navigator.clipboard.writeText(template).then(() => {
             alert('Template copied to clipboard!');
