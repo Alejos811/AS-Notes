@@ -4,12 +4,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const offlineCaseCheckbox = document.getElementById('offlineCaseCheckbox');
     const cancellationCheckboxes = document.getElementById('cancellationCheckboxes');
     const cancellationTextboxes = document.getElementById('cancellationTextboxes');
+    const movingWithCompetitor = document.getElementById('movingWithCompetitor');
+    const competitorsNameGroup = document.getElementById('competitorsNameGroup');
     const createTemplate = document.getElementById('createTemplate');
     const resetForm = document.getElementById('resetForm');
 
     function toggleElements() {
         const serviceType = document.querySelector('input[name="serviceType"]:checked').value;
         const cancellation = document.querySelector('input[name="cancellation"]:checked').value;
+        const movingWithCompetitorValue = movingWithCompetitor.value;
 
         if (serviceType === 'offlineCase') {
             offlineCaseCheckbox.style.display = 'block';
@@ -24,6 +27,12 @@ document.addEventListener('DOMContentLoaded', function () {
             cancellationCheckboxes.style.display = 'none';
             cancellationTextboxes.style.display = 'none';
         }
+
+        if (movingWithCompetitorValue === 'no') {
+            competitorsNameGroup.style.display = 'none';
+        } else {
+            competitorsNameGroup.style.display = 'block';
+        }
     }
 
     serviceTypeRadios.forEach(radio => {
@@ -33,6 +42,8 @@ document.addEventListener('DOMContentLoaded', function () {
     cancellationRadios.forEach(radio => {
         radio.addEventListener('change', toggleElements);
     });
+
+    movingWithCompetitor.addEventListener('change', toggleElements);
 
     createTemplate.addEventListener('click', function () {
         let template = '';
@@ -71,9 +82,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Add vertical spaces after specific fields
         template = template.replace(/(Phone Number: .+\n)/, '$1\n');
-        template = template.replace(/(Issue or Request:\n.+\n\n)/, '$1\n');
+        template = template.replace(/(Issue or Request:\n.+\n\n)/, '\n$1\n');
         template = template.replace(/(Steps Taken:\n.+\n\n)/, '$1\n');
-        template = template.replace(/(Outcome: .+\n)/, '$1\n\n');
+        template = template.replace(/(Outcome: .+\n)\n/, '$1');
 
         navigator.clipboard.writeText(template).then(() => {
             alert('Template copied to clipboard!');
