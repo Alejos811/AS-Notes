@@ -61,7 +61,7 @@ h1, h4 {
 }
 
 #checkAll {
-    margin-left: calc(50% + 8px); /* Adjust this value to align perfectly */
+    margin-left: calc(50% + 1px); /* Adjust this value to align perfectly */
 }
 
 .bold {
