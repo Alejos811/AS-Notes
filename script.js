@@ -114,6 +114,16 @@ document.addEventListener('DOMContentLoaded', function () {
                     input.value = '';
                 }
             });
+
+        // Set the service type radio button to "Live Call"
+        document.getElementById('liveCall').checked = true;
+
+        // Set the cancellation radio button to "No"
+        document.getElementById('cancellationNo').checked = true;
+
+        // Reapply visibility settings
+        toggleElements();
+            
         }
     });
 
