@@ -135,5 +135,26 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    // US format button functionality
+    usFormatButton.addEventListener('click', function () {
+        const phoneNumberInput = document.getElementById('phoneNumber');
+        let phoneNumber = phoneNumberInput.value;
+
+        // Format the phone number to US format (e.g., (123) 456-7890)
+        phoneNumber = phoneNumber.replace(/\D/g, ''); // Remove non-numeric characters
+        if (phoneNumber.length === 10) {
+            phoneNumber = `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3, 6)}-${phoneNumber.slice(6)}`;
+        }
+        phoneNumberInput.value = phoneNumber;
+    });
+
+    // Check all functionality
+    checkAllCheckbox.addEventListener('change', function () {
+        const checkboxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]');
+        checkboxes.forEach(checkbox => {
+            checkbox.checked = checkAllCheckbox.checked;
+        });
+    });
+
     toggleElements(); // Initial call to set the correct visibility
 });
