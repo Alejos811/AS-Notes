@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let template = '';
         const formGroups = document.querySelectorAll('.form-group');
         let cdCheckListAdded = false;
+        let requestFromMAHAdded = false;
 
         formGroups.forEach(group => {
             const label = group.querySelector('label');
@@ -47,10 +48,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (input && input.offsetParent !== null) { // Check if the input is visible
                     if (input.type === 'checkbox') {
                         if (label.textContent === 'CD Check List' && !cdCheckListAdded) {
-                            template += `${label.textContent}:\n`;
+                            template += `${label.textContent}:\n\n`;
                             cdCheckListAdded = true;
                         }
+                        if (input.id === 'requestFromMAH' && requestFromMAHAdded) {
+                            return; // Skip if "Request coming from MAH" has already been added
+                        }
                         template += `${input.nextElementSibling.textContent}: ${input.checked ? '✓' : 'x'}\n`;
+                        if (input.id === 'requestFromMAH') {
+                            requestFromMAHAdded = true;
+                        }
                     } else if (input.tagName.toLowerCase() === 'select') {
                         template += `${label.textContent}: ${input.options[input.selectedIndex].text}\n`;
                     } else if (input.tagName.toLowerCase() === 'textarea') {
@@ -66,6 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
         template = template.replace(/(Phone Number: .+\n)/, '$1\n');
         template = template.replace(/(Issue or Request:\n.+\n\n)/, '$1\n');
         template = template.replace(/(Steps Taken:\n.+\n\n)/, '$1\n');
+        template = template.replace(/(Outcome: .+\n)/, '$1\n\n');
 
         navigator.clipboard.writeText(template).then(() => {
             alert('Template copied to clipboard!');
