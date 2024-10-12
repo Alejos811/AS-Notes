@@ -60,6 +60,10 @@ h1, h4 {
     flex: 1 1 45%;
 }
 
+#checkAll {
+    margin-left: calc(50% + 8px); /* Adjust this value to align perfectly */
+}
+
 .bold {
     font-weight: bold;
 }
