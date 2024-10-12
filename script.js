@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
         template = template.replace(/(Verified Pin: .+\n)\n/, '$1');
 
         // Correct the label for the "Competitor's Name" field
-        template = template.replace(/Moving with Competitor \(Y\/N\): .+\nCompetitor's Name:/, 'Competitor's Name');
+        template = template.replace(/(Moving with Competitor \(Y\/N\): .+\n)Moving with Competitor \(Y\/N\):/, '$1Competitor\'s Name:');
 
         navigator.clipboard.writeText(template).then(() => {
             alert('Template copied to clipboard!');
