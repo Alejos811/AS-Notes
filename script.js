@@ -161,9 +161,9 @@ document.addEventListener('DOMContentLoaded', function () {
         phoneNumberInput.value = phoneNumbers.join(' / ');
     });
 
-    // Check all functionality
+     // Check all functionality
     checkAllCheckbox.addEventListener('change', function () {
-        const checkboxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]');
+        const checkboxes = document.querySelectorAll('#requestFromMAH, #verifiedPin, #verifiedCC, #verifiedBillingAddress, #survey, #highlightFeatures, #rebuttals, #comebackStatement');
         checkboxes.forEach(checkbox => {
             checkbox.checked = checkAllCheckbox.checked;
         });
