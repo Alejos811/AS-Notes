@@ -88,10 +88,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Add vertical spaces after specific fields
         template = template.replace(/(Phone Number: .+\n)/, '$1\n');
-        template = template.replace(/(Issue or Request:\n.+\n\n)\n/, '$1');
-        template = template.replace(/(Steps Taken:\n.+\n)\n/, '$1');
+        template = template.replace(/(Issue or Request:\n.+\n\n)/, '$1\n');
+        template = template.replace(/(Steps Taken:\n.+\n\n)/, '$1\n');
         template = template.replace(/(Outcome: .+\n)\n/, '\n$1\n\n');
         template = template.replace(/(CD Check List:\n\n.+\n)/, '\n$1\n\n');
+
+        // Remove extra vertical spaces after the first checkbox
+        template = template.replace(/(Request coming from MAH: .+\n)\n/, '$1');
+        template = template.replace(/(Verified Pin: .+\n)\n/, '$1');
+
+        // Correct the label for the "Competitor's Name" field
+        template = template.replace(/Moving with Competitor \(Y\/N\): .+\nCompetitor's Name:/, 'Moving with Competitor (Y/N):');
 
         navigator.clipboard.writeText(template).then(() => {
             alert('Template copied to clipboard!');
