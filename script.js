@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const competitorsNameGroup = document.getElementById('competitorsNameGroup');
     const createTemplate = document.getElementById('createTemplate');
     const resetForm = document.getElementById('resetForm');
+    const checkAllCheckbox = document.getElementById('checkAll');
+    const usFormatButton = document.getElementById('usFormat');
 
     function toggleElements() {
         const serviceType = document.querySelector('input[name="serviceType"]:checked').value;
