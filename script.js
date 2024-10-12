@@ -142,12 +142,23 @@ document.addEventListener('DOMContentLoaded', function () {
         const phoneNumberInput = document.getElementById('phoneNumber');
         let phoneNumber = phoneNumberInput.value;
 
-        // Format the phone number to US format (e.g., (123) 456-7890)
-        phoneNumber = phoneNumber.replace(/\D/g, ''); // Remove non-numeric characters
-        if (phoneNumber.length === 10) {
-            phoneNumber = `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3, 6)}-${phoneNumber.slice(6)}`;
-        }
-        phoneNumberInput.value = phoneNumber;
+        // Split the input by spaces, commas, dots, or dashes
+        let phoneNumbers = phoneNumber.split(/[\s,.-]+/);
+
+        // Filter out any non-10-digit numbers
+        phoneNumbers = phoneNumbers.filter(num => num.length === 10);
+
+        // Format each 10-digit number to US format (e.g., (123) 456-7890)
+        phoneNumbers = phoneNumbers.map(num => {
+            num = num.replace(/\D/g, ''); // Remove non-numeric characters
+            if (num.length === 10) {
+                return `(${num.slice(0, 3)}) ${num.slice(3, 6)}-${num.slice(6)}`;
+            }
+            return num;
+        });
+
+        // Join the formatted numbers with " / "
+        phoneNumberInput.value = phoneNumbers.join(' / ');
     });
 
     // Check all functionality
