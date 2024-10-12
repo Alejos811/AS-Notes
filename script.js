@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const inputs = group.querySelectorAll('input, textarea, select');
 
             inputs.forEach(input => {
-                if (input && input.offsetParent !== null) { // Check if the input is visible
+                if (input && input.offsetParent !== null && !input.classList.contains('exclude-from-template')) { // Check if the input is visible and not excluded
                     if (input.type === 'checkbox') {
                         if (label.textContent === 'CD Check List' && !cdCheckListAdded) {
                             template += `${label.textContent}:\n\n`;
