@@ -61,7 +61,7 @@ h1, h4 {
 }
 
 #checkAll {
-    margin-left: calc(25% + 2px); /* Adjust this value to align perfectly */
+    margin-left: calc(25% + 4px); /* Adjust this value to align perfectly */
 }
 
 .bold {
@@ -124,11 +124,10 @@ h1, h4 {
 
 footer {
     text-align: center;
-    background-color: rgb(36, 84, 216);
     margin-top: 24px;
     font-size: 18px;
     font-weight: bold;
-    color: #aaa;
+    color: white;
 }
 
 /* Ensure checkboxes are interactive */
